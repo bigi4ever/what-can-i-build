@@ -65,6 +65,7 @@ floor's centre), so a lid hinged on its top edge folds over the box with +90.
 | square pyramid: base to triangle | 125.26 |
 | pyramid roof on a vertical wall: wall to triangle | 35.26 |
 | tetrahedron: triangle to triangle | 109.47 |
+| octahedron: triangle to triangle | 70.53 |
 
 ## What the validator checks
 
@@ -77,5 +78,7 @@ floor's centre), so a lid hinged on its top edge folds over the box with +90.
    the edges that close a loop, like the last wall of a cube, so you don't
    have to declare them.
 5. Collisions: no two pieces pass through or lie on top of each other.
+6. Stability (warning): the centre of mass, with pieces weighted by area,
+   must be above the convex hull of the points touching the ground.
 
 Errors are plain English sentences meant to be fed back to the generator.

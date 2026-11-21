@@ -1,0 +1,83 @@
+{
+  "name": "Diamond (octahedron)",
+  "nameHe": "יהלום",
+  "system": "magnetic-frames",
+  "description": "Eight triangles form an octahedron resting on one face.",
+  "pieces": [
+    {
+      "id": "bottom",
+      "type": "triangle",
+      "color": "lightblue"
+    },
+    {
+      "id": "ring-a",
+      "type": "triangle",
+      "color": "blue",
+      "attach": {
+        "to": "bottom",
+        "edge": 0,
+        "fold": 70.53
+      }
+    },
+    {
+      "id": "ring-b",
+      "type": "triangle",
+      "color": "purple",
+      "attach": {
+        "to": "bottom",
+        "edge": 1,
+        "fold": 70.53
+      }
+    },
+    {
+      "id": "ring-c",
+      "type": "triangle",
+      "color": "blue",
+      "attach": {
+        "to": "bottom",
+        "edge": 2,
+        "fold": 70.53
+      }
+    },
+    {
+      "id": "ring-d",
+      "type": "triangle",
+      "color": "lightblue",
+      "attach": {
+        "to": "ring-a",
+        "edge": 1,
+        "fold": 70.53
+      }
+    },
+    {
+      "id": "ring-e",
+      "type": "triangle",
+      "color": "purple",
+      "attach": {
+        "to": "ring-b",
+        "edge": 1,
+        "fold": 70.53
+      }
+    },
+    {
+      "id": "ring-f",
+      "type": "triangle",
+      "color": "lightblue",
+      "attach": {
+        "to": "ring-c",
+        "edge": 1,
+        "fold": 70.53
+      }
+    },
+    {
+      "id": "top",
+      "type": "triangle",
+      "color": "purple",
+      "attach": {
+        "to": "ring-d",
+        "edge": 2,
+        "fold": 70.53
+      }
+    }
+  ]
+}

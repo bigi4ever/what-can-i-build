@@ -5,6 +5,7 @@
 //   4. geometry    - finds every pair of edges that physically meet (including
 //                    loops that close a shape, like the last wall of a cube)
 //   5. collisions  - no two pieces pass through each other
+//   6. stability   - warns when the centre of mass is not over the footprint
 //
 // Messages are plain English so they can be fed back to a generator (LLM) as-is.
 
@@ -167,6 +168,29 @@ export function validateModel(model, system, inventory = null) {
   for (const w of world.values()) for (const v of w.verts) maxZ = Math.max(maxZ, v[2]);
   result.stats.height = round(maxZ);
 
+  // ---- 6. stability ---------------------------------------------------------
+  // The model rests on the vertices touching the ground; it stands if its
+  // centre of mass (pieces weighted by area) is inside their convex hull.
+  const ground = [];
+  let mass = 0;
+  let cx = 0;
+  let cy = 0;
+  for (const w of world.values()) {
+    for (const v of w.verts) if (v[2] < 1e-3) ground.push([v[0], v[1]]);
+    const area = polygonArea(w.type.vertices);
+    const c = scale(w.verts.reduce((acc, v) => add(acc, v), [0, 0, 0]), 1 / w.verts.length);
+    mass += area;
+    cx += c[0] * area;
+    cy += c[1] * area;
+  }
+  const hull = convexHull(ground);
+  if (maxZ > 1e-3 && !pointInHull([cx / mass, cy / mass], hull)) {
+    warnings.push('The centre of mass is not above the part touching the ground, so the model may tip over.');
+    result.stats.stable = false;
+  } else {
+    result.stats.stable = true;
+  }
+
   result.ok = errors.length === 0;
   return result;
 }
@@ -180,6 +204,45 @@ function countPieces(pieces) {
     if (p.color) out[p.type].colors[p.color] = (out[p.type].colors[p.color] || 0) + n;
   }
   return out;
+}
+
+/** Area of a flat polygon given in its local XY plane. */
+function polygonArea(verts) {
+  let a = 0;
+  for (let i = 0; i < verts.length; i++) {
+    const [x1, y1] = verts[i];
+    const [x2, y2] = verts[(i + 1) % verts.length];
+    a += x1 * y2 - x2 * y1;
+  }
+  return Math.abs(a) / 2;
+}
+
+/** 2D convex hull (monotone chain), counter-clockwise. */
+function convexHull(points) {
+  const pts = [...points].sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  if (pts.length < 3) return pts;
+  const turn = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+  const lower = [];
+  for (const p of pts) {
+    while (lower.length >= 2 && turn(lower[lower.length - 2], lower[lower.length - 1], p) <= 1e-12) lower.pop();
+    lower.push(p);
+  }
+  const upper = [];
+  for (const p of pts.reverse()) {
+    while (upper.length >= 2 && turn(upper[upper.length - 2], upper[upper.length - 1], p) <= 1e-12) upper.pop();
+    upper.push(p);
+  }
+  return lower.slice(0, -1).concat(upper.slice(0, -1));
+}
+
+function pointInHull(p, hull) {
+  if (hull.length < 3) return false;
+  for (let i = 0; i < hull.length; i++) {
+    const a = hull[i];
+    const b = hull[(i + 1) % hull.length];
+    if ((b[0] - a[0]) * (p[1] - a[1]) - (b[1] - a[1]) * (p[0] - a[0]) < -1e-9) return false;
+  }
+  return true;
 }
 
 function shrinkPolygon(verts, factor) {

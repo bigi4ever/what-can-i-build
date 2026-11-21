@@ -1,0 +1,53 @@
+{
+  "name": "Square pyramid",
+  "nameHe": "פירמידה",
+  "system": "magnetic-frames",
+  "description": "A square base with four triangles folded up to meet at the top.",
+  "pieces": [
+    {
+      "id": "base",
+      "type": "square",
+      "color": "yellow"
+    },
+    {
+      "id": "side-1",
+      "type": "triangle",
+      "color": "red",
+      "attach": {
+        "to": "base",
+        "edge": 0,
+        "fold": 125.26
+      }
+    },
+    {
+      "id": "side-2",
+      "type": "triangle",
+      "color": "blue",
+      "attach": {
+        "to": "base",
+        "edge": 1,
+        "fold": 125.26
+      }
+    },
+    {
+      "id": "side-3",
+      "type": "triangle",
+      "color": "green",
+      "attach": {
+        "to": "base",
+        "edge": 2,
+        "fold": 125.26
+      }
+    },
+    {
+      "id": "side-4",
+      "type": "triangle",
+      "color": "orange",
+      "attach": {
+        "to": "base",
+        "edge": 3,
+        "fold": 125.26
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "name": "Flower",
+  "nameHe": "פרח",
+  "system": "magnetic-frames",
+  "description": "A hexagon with six triangle petals folded up into a cup.",
+  "pieces": [
+    {
+      "id": "centre",
+      "type": "hexagon",
+      "color": "yellow"
+    },
+    {
+      "id": "petal-1",
+      "type": "triangle",
+      "color": "red",
+      "attach": {
+        "to": "centre",
+        "edge": 0,
+        "fold": 40
+      }
+    },
+    {
+      "id": "petal-2",
+      "type": "triangle",
+      "color": "purple",
+      "attach": {
+        "to": "centre",
+        "edge": 1,
+        "fold": 40
+      }
+    },
+    {
+      "id": "petal-3",
+      "type": "triangle",
+      "color": "red",
+      "attach": {
+        "to": "centre",
+        "edge": 2,
+        "fold": 40
+      }
+    },
+    {
+      "id": "petal-4",
+      "type": "triangle",
+      "color": "purple",
+      "attach": {
+        "to": "centre",
+        "edge": 3,
+        "fold": 40
+      }
+    },
+    {
+      "id": "petal-5",
+      "type": "triangle",
+      "color": "red",
+      "attach": {
+        "to": "centre",
+        "edge": 4,
+        "fold": 40
+      }
+    },
+    {
+      "id": "petal-6",
+      "type": "triangle",
+      "color": "purple",
+      "attach": {
+        "to": "centre",
+        "edge": 5,
+        "fold": 40
+      }
+    }
+  ]
+}

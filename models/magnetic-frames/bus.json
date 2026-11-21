@@ -1,0 +1,103 @@
+{
+  "name": "Bus",
+  "nameHe": "אוטובוס",
+  "system": "magnetic-frames",
+  "description": "A long box on four semicircle wheels.",
+  "pieces": [
+    {
+      "id": "floor-back",
+      "type": "square",
+      "color": "yellow"
+    },
+    {
+      "id": "floor-front",
+      "type": "square",
+      "color": "yellow",
+      "attach": {
+        "to": "floor-back",
+        "edge": 0,
+        "fold": 0
+      }
+    },
+    {
+      "id": "wheel-1",
+      "type": "semicircle",
+      "color": "blue",
+      "attach": {
+        "to": "floor-back",
+        "edge": 1,
+        "fold": -90
+      }
+    },
+    {
+      "id": "wheel-2",
+      "type": "semicircle",
+      "color": "blue",
+      "attach": {
+        "to": "floor-back",
+        "edge": 3,
+        "fold": -90
+      }
+    },
+    {
+      "id": "wheel-3",
+      "type": "semicircle",
+      "color": "blue",
+      "attach": {
+        "to": "floor-front",
+        "edge": 1,
+        "fold": -90
+      }
+    },
+    {
+      "id": "wheel-4",
+      "type": "semicircle",
+      "color": "blue",
+      "attach": {
+        "to": "floor-front",
+        "edge": 3,
+        "fold": -90
+      }
+    },
+    {
+      "id": "back",
+      "type": "square",
+      "color": "red",
+      "attach": {
+        "to": "floor-back",
+        "edge": 2,
+        "fold": 90
+      }
+    },
+    {
+      "id": "front",
+      "type": "square",
+      "color": "lightblue",
+      "attach": {
+        "to": "floor-front",
+        "edge": 2,
+        "fold": 90
+      }
+    },
+    {
+      "id": "roof-back",
+      "type": "square",
+      "color": "red",
+      "attach": {
+        "to": "back",
+        "edge": 2,
+        "fold": 90
+      }
+    },
+    {
+      "id": "roof-front",
+      "type": "square",
+      "color": "red",
+      "attach": {
+        "to": "roof-back",
+        "edge": 2,
+        "fold": 0
+      }
+    }
+  ]
+}

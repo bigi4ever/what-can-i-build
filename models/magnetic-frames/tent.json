@@ -1,0 +1,53 @@
+{
+  "name": "Tent",
+  "nameHe": "אוהל",
+  "system": "magnetic-frames",
+  "description": "A floor, two sloping roof squares that meet at the ridge, and a triangle at each end.",
+  "pieces": [
+    {
+      "id": "floor",
+      "type": "square",
+      "color": "green"
+    },
+    {
+      "id": "roof-left",
+      "type": "square",
+      "color": "yellow",
+      "attach": {
+        "to": "floor",
+        "edge": 0,
+        "fold": 120
+      }
+    },
+    {
+      "id": "roof-right",
+      "type": "square",
+      "color": "orange",
+      "attach": {
+        "to": "floor",
+        "edge": 2,
+        "fold": 120
+      }
+    },
+    {
+      "id": "end-front",
+      "type": "triangle",
+      "color": "red",
+      "attach": {
+        "to": "floor",
+        "edge": 1,
+        "fold": 90
+      }
+    },
+    {
+      "id": "end-back",
+      "type": "triangle",
+      "color": "red",
+      "attach": {
+        "to": "floor",
+        "edge": 3,
+        "fold": 90
+      }
+    }
+  ]
+}

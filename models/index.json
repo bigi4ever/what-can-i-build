@@ -1,8 +1,17 @@
 {
   "magnetic-frames": [
     "castle.json",
+    "rocket.json",
+    "bus.json",
     "house.json",
     "hex-tower.json",
-    "cube.json"
+    "diamond.json",
+    "star.json",
+    "flower.json",
+    "cube.json",
+    "tent.json",
+    "pyramid.json",
+    "table.json",
+    "tetrahedron.json"
   ]
 }

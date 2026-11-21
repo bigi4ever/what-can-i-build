@@ -8,11 +8,41 @@ const load = (p) => JSON.parse(readFileSync(new URL(`../${p}`, import.meta.url),
 const inventory = load('inventories/magnets-photo-1.json');
 const clone = (x) => JSON.parse(JSON.stringify(x));
 
-test('every bundled model is valid against the sample inventory', () => {
-  for (const f of readdirSync(new URL('../models/magnetic-frames/', import.meta.url))) {
-    const r = validateModel(load(`models/magnetic-frames/${f}`), magneticFrames, inventory);
+const modelFiles = readdirSync(new URL('../models/magnetic-frames/', import.meta.url));
+
+test('every bundled model is valid, stable and listed in the index', () => {
+  const index = load('models/index.json')['magnetic-frames'];
+  for (const f of modelFiles) {
+    const r = validateModel(load(`models/magnetic-frames/${f}`), magneticFrames);
     assert.equal(r.ok, true, `${f}: ${r.errors.join(' | ')}`);
+    assert.deepEqual(r.warnings, [], `${f}: ${r.warnings.join(' | ')}`);
+    assert.ok(index.includes(f), `${f} is missing from models/index.json`);
   }
+  assert.equal(index.length, modelFiles.length);
+});
+
+test('closed and joined shapes have the expected number of edge connections', () => {
+  const expected = {
+    'cube.json': 12, 'hex-tower.json': 18, 'house.json': 16, 'castle.json': 28, 'tent.json': 9,
+    'pyramid.json': 8, 'tetrahedron.json': 6, 'diamond.json': 12, 'rocket.json': 24, 'bus.json': 10,
+  };
+  for (const [f, n] of Object.entries(expected)) {
+    assert.equal(validateModel(load(`models/magnetic-frames/${f}`), magneticFrames).stats.connections, n, f);
+  }
+});
+
+test('a model that would tip over gets a warning', () => {
+  // A big hexagon sticking out from the top of a wall, far beyond the floor.
+  const r = validateModel({
+    pieces: [
+      { id: 'floor', type: 'square' },
+      { id: 'wall', type: 'square', attach: { to: 'floor', edge: 0, fold: 90 } },
+      { id: 'shelf', type: 'hexagon', attach: { to: 'wall', edge: 2, fold: -90 } },
+    ],
+  }, magneticFrames);
+  assert.equal(r.ok, true);
+  assert.equal(r.stats.stable, false);
+  assert.ok(r.warnings.some((w) => w.includes('tip over')));
 });
 
 test('cube closes into 12 edge connections', () => {
