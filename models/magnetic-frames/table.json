@@ -1,0 +1,53 @@
+{
+  "name": "Table",
+  "nameHe": "שולחן",
+  "system": "magnetic-frames",
+  "description": "A square tabletop standing on four triangle legs.",
+  "pieces": [
+    {
+      "id": "top",
+      "type": "square",
+      "color": "orange"
+    },
+    {
+      "id": "leg-1",
+      "type": "triangle",
+      "color": "green",
+      "attach": {
+        "to": "top",
+        "edge": 0,
+        "fold": -90
+      }
+    },
+    {
+      "id": "leg-2",
+      "type": "triangle",
+      "color": "green",
+      "attach": {
+        "to": "top",
+        "edge": 1,
+        "fold": -90
+      }
+    },
+    {
+      "id": "leg-3",
+      "type": "triangle",
+      "color": "lime",
+      "attach": {
+        "to": "top",
+        "edge": 2,
+        "fold": -90
+      }
+    },
+    {
+      "id": "leg-4",
+      "type": "triangle",
+      "color": "lime",
+      "attach": {
+        "to": "top",
+        "edge": 3,
+        "fold": -90
+      }
+    }
+  ]
+}

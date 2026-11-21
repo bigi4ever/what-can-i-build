@@ -1,0 +1,133 @@
+{
+  "name": "Rocket",
+  "nameHe": "טיל",
+  "system": "magnetic-frames",
+  "description": "A two-storey square body with a pointed nose cone.",
+  "pieces": [
+    {
+      "id": "floor",
+      "type": "square",
+      "color": "blue"
+    },
+    {
+      "id": "w1-front",
+      "type": "square",
+      "color": "red",
+      "attach": {
+        "to": "floor",
+        "edge": 0,
+        "fold": 90
+      }
+    },
+    {
+      "id": "w1-right",
+      "type": "square",
+      "color": "orange",
+      "attach": {
+        "to": "floor",
+        "edge": 1,
+        "fold": 90
+      }
+    },
+    {
+      "id": "w1-back",
+      "type": "square",
+      "color": "red",
+      "attach": {
+        "to": "floor",
+        "edge": 2,
+        "fold": 90
+      }
+    },
+    {
+      "id": "w1-left",
+      "type": "square",
+      "color": "orange",
+      "attach": {
+        "to": "floor",
+        "edge": 3,
+        "fold": 90
+      }
+    },
+    {
+      "id": "w2-front",
+      "type": "square",
+      "color": "yellow",
+      "attach": {
+        "to": "w1-front",
+        "edge": 2,
+        "fold": 0
+      }
+    },
+    {
+      "id": "w2-right",
+      "type": "square",
+      "color": "lightblue",
+      "attach": {
+        "to": "w1-right",
+        "edge": 2,
+        "fold": 0
+      }
+    },
+    {
+      "id": "w2-back",
+      "type": "square",
+      "color": "yellow",
+      "attach": {
+        "to": "w1-back",
+        "edge": 2,
+        "fold": 0
+      }
+    },
+    {
+      "id": "w2-left",
+      "type": "square",
+      "color": "lightblue",
+      "attach": {
+        "to": "w1-left",
+        "edge": 2,
+        "fold": 0
+      }
+    },
+    {
+      "id": "nose-front",
+      "type": "triangle",
+      "color": "red",
+      "attach": {
+        "to": "w2-front",
+        "edge": 2,
+        "fold": 35.26
+      }
+    },
+    {
+      "id": "nose-right",
+      "type": "triangle",
+      "color": "orange",
+      "attach": {
+        "to": "w2-right",
+        "edge": 2,
+        "fold": 35.26
+      }
+    },
+    {
+      "id": "nose-back",
+      "type": "triangle",
+      "color": "red",
+      "attach": {
+        "to": "w2-back",
+        "edge": 2,
+        "fold": 35.26
+      }
+    },
+    {
+      "id": "nose-left",
+      "type": "triangle",
+      "color": "orange",
+      "attach": {
+        "to": "w2-left",
+        "edge": 2,
+        "fold": 35.26
+      }
+    }
+  ]
+}

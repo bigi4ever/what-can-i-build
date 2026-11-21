@@ -1,0 +1,73 @@
+{
+  "name": "Star",
+  "nameHe": "כוכב",
+  "system": "magnetic-frames",
+  "description": "A flat six-pointed star: a hexagon with a triangle on every edge.",
+  "pieces": [
+    {
+      "id": "centre",
+      "type": "hexagon",
+      "color": "yellow"
+    },
+    {
+      "id": "point-1",
+      "type": "triangle",
+      "color": "red",
+      "attach": {
+        "to": "centre",
+        "edge": 0,
+        "fold": 0
+      }
+    },
+    {
+      "id": "point-2",
+      "type": "triangle",
+      "color": "orange",
+      "attach": {
+        "to": "centre",
+        "edge": 1,
+        "fold": 0
+      }
+    },
+    {
+      "id": "point-3",
+      "type": "triangle",
+      "color": "red",
+      "attach": {
+        "to": "centre",
+        "edge": 2,
+        "fold": 0
+      }
+    },
+    {
+      "id": "point-4",
+      "type": "triangle",
+      "color": "orange",
+      "attach": {
+        "to": "centre",
+        "edge": 3,
+        "fold": 0
+      }
+    },
+    {
+      "id": "point-5",
+      "type": "triangle",
+      "color": "red",
+      "attach": {
+        "to": "centre",
+        "edge": 4,
+        "fold": 0
+      }
+    },
+    {
+      "id": "point-6",
+      "type": "triangle",
+      "color": "orange",
+      "attach": {
+        "to": "centre",
+        "edge": 5,
+        "fold": 0
+      }
+    }
+  ]
+}

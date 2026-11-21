@@ -48,6 +48,7 @@ export const magneticFrames = {
     'square pyramid: base to triangle': 125.26,
     'square pyramid roof on a vertical wall: wall to triangle': 35.26,
     'tetrahedron: triangle to triangle': 109.47,
+    'octahedron: triangle to triangle': 70.53,
     'lying flat on the ground from a vertical piece': 90,
   },
   colors: {

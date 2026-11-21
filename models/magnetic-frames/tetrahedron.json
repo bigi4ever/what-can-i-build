@@ -1,0 +1,43 @@
+{
+  "name": "Triangle pyramid",
+  "nameHe": "פירמידה משולשת",
+  "system": "magnetic-frames",
+  "description": "The smallest closed shape: four triangles.",
+  "pieces": [
+    {
+      "id": "base",
+      "type": "triangle",
+      "color": "blue"
+    },
+    {
+      "id": "side-1",
+      "type": "triangle",
+      "color": "red",
+      "attach": {
+        "to": "base",
+        "edge": 0,
+        "fold": 109.47
+      }
+    },
+    {
+      "id": "side-2",
+      "type": "triangle",
+      "color": "yellow",
+      "attach": {
+        "to": "base",
+        "edge": 1,
+        "fold": 109.47
+      }
+    },
+    {
+      "id": "side-3",
+      "type": "triangle",
+      "color": "green",
+      "attach": {
+        "to": "base",
+        "edge": 2,
+        "fold": 109.47
+      }
+    }
+  ]
+}
