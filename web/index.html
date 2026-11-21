@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>מה אפשר לבנות?</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>מה אפשר לבנות?</h1>
+    <p class="tagline">מצלמים את החלקים, ומקבלים מודל שאפשר לבנות בדיוק ממה שיש לכם.</p>
+  </header>
+
+  <main>
+    <section class="viewer-panel">
+      <div class="toolbar">
+        <label>מודל:
+          <select id="model-select"></select>
+        </label>
+        <span id="status-badge" class="badge"></span>
+      </div>
+      <div id="viewer" aria-label="תצוגת תלת-ממד של המודל"></div>
+      <div class="steps">
+        <button id="prev" type="button" aria-label="שלב קודם">→</button>
+        <input id="step-slider" type="range" min="1" value="1" aria-label="שלב בנייה" />
+        <button id="next" type="button" aria-label="שלב הבא">←</button>
+        <button id="play" type="button">▶ הפעל</button>
+      </div>
+      <p id="step-text" class="step-text"></p>
+      <p class="hint">גוררים כדי לסובב, גלגלת או צביטה כדי להתקרב.</p>
+    </section>
+
+    <aside class="side-panel">
+      <section>
+        <h2>החלקים שזוהו</h2>
+        <img id="photo" src="../samples/magnets-photo-1.webp" alt="חלקי מגנטים מפוזרים על הרצפה" />
+        <table id="inventory-table">
+          <thead><tr><th>צורה</th><th>צבע</th><th>יש</th><th>בשימוש</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <section>
+        <h2>בדיקת תקינות</h2>
+        <ul id="validation"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
