@@ -1,0 +1,14 @@
+{
+  "name": "Cube",
+  "nameHe": "קובייה",
+  "system": "magnetic-frames",
+  "description": "The classic first build: six squares folded up from a flat cross.",
+  "pieces": [
+    { "id": "floor", "type": "square", "color": "blue" },
+    { "id": "front", "type": "square", "color": "yellow", "attach": { "to": "floor", "edge": 0, "fold": 90 } },
+    { "id": "right", "type": "square", "color": "red", "attach": { "to": "floor", "edge": 1, "fold": 90 } },
+    { "id": "back", "type": "square", "color": "yellow", "attach": { "to": "floor", "edge": 2, "fold": 90 } },
+    { "id": "left", "type": "square", "color": "orange", "attach": { "to": "floor", "edge": 3, "fold": 90 } },
+    { "id": "top", "type": "square", "color": "green", "attach": { "to": "front", "edge": 2, "fold": 90 } }
+  ]
+}

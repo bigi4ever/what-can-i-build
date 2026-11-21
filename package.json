@@ -1,0 +1,13 @@
+{
+  "name": "what-can-i-build",
+  "version": "0.1.0",
+  "description": "Photograph your building pieces, get models you can build from exactly what you have.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check.js",
+    "serve": "node scripts/serve.js"
+  },
+  "engines": { "node": ">=20" }
+}

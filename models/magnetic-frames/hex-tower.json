@@ -1,0 +1,16 @@
+{
+  "name": "Hexagonal tower",
+  "nameHe": "מגדל משושה",
+  "system": "magnetic-frames",
+  "description": "Two hexagons and six squares form a closed hexagonal prism.",
+  "pieces": [
+    { "id": "base", "type": "hexagon", "color": "yellow" },
+    { "id": "s1", "type": "square", "color": "yellow", "attach": { "to": "base", "edge": 0, "fold": 90 } },
+    { "id": "s2", "type": "square", "color": "red", "attach": { "to": "base", "edge": 1, "fold": 90 } },
+    { "id": "s3", "type": "square", "color": "blue", "attach": { "to": "base", "edge": 2, "fold": 90 } },
+    { "id": "s4", "type": "square", "color": "green", "attach": { "to": "base", "edge": 3, "fold": 90 } },
+    { "id": "s5", "type": "square", "color": "purple", "attach": { "to": "base", "edge": 4, "fold": 90 } },
+    { "id": "s6", "type": "square", "color": "orange", "attach": { "to": "base", "edge": 5, "fold": 90 } },
+    { "id": "top", "type": "hexagon", "color": "red", "attach": { "to": "s1", "edge": 2, "fold": 90 } }
+  ]
+}

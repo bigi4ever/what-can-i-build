@@ -1,0 +1,17 @@
+{
+  "name": "House with a pyramid roof",
+  "nameHe": "בית עם גג",
+  "system": "magnetic-frames",
+  "description": "A floor, four walls and a four-triangle pyramid roof.",
+  "pieces": [
+    { "id": "floor", "type": "square", "color": "blue" },
+    { "id": "front", "type": "square", "color": "yellow", "attach": { "to": "floor", "edge": 0, "fold": 90 } },
+    { "id": "right", "type": "square", "color": "red", "attach": { "to": "floor", "edge": 1, "fold": 90 } },
+    { "id": "back", "type": "square", "color": "yellow", "attach": { "to": "floor", "edge": 2, "fold": 90 } },
+    { "id": "left", "type": "square", "color": "orange", "attach": { "to": "floor", "edge": 3, "fold": 90 } },
+    { "id": "roof-front", "type": "triangle", "color": "lightblue", "attach": { "to": "front", "edge": 2, "fold": 35.26 } },
+    { "id": "roof-right", "type": "triangle", "color": "green", "attach": { "to": "right", "edge": 2, "fold": 35.26 } },
+    { "id": "roof-back", "type": "triangle", "color": "lightblue", "attach": { "to": "back", "edge": 2, "fold": 35.26 } },
+    { "id": "roof-left", "type": "triangle", "color": "lime", "attach": { "to": "left", "edge": 2, "fold": 35.26 } }
+  ]
+}

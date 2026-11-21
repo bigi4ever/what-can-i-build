@@ -1,0 +1,8 @@
+{
+  "magnetic-frames": [
+    "castle.json",
+    "house.json",
+    "hex-tower.json",
+    "cube.json"
+  ]
+}

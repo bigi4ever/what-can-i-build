@@ -1,0 +1,28 @@
+{
+  "name": "Castle with tower and house",
+  "nameHe": "טירה עם מגדל ובית",
+  "system": "magnetic-frames",
+  "description": "A hexagonal tower and a house with a pyramid roof, joined by a path square. Uses all 18 pieces from the sample photo.",
+  "pieces": [
+    { "id": "path", "type": "square", "color": "green" },
+
+    { "id": "tower-1", "type": "square", "color": "yellow", "attach": { "to": "path", "edge": 0, "fold": 90 } },
+    { "id": "tower-2", "type": "square", "color": "red", "attach": { "to": "tower-1", "edge": 1, "fold": -60 } },
+    { "id": "tower-3", "type": "square", "color": "blue", "attach": { "to": "tower-2", "edge": 2, "fold": -60 } },
+    { "id": "tower-4", "type": "square", "color": "yellow", "attach": { "to": "tower-3", "edge": 2, "fold": -60 } },
+    { "id": "tower-5", "type": "square", "color": "purple", "attach": { "to": "tower-4", "edge": 2, "fold": -60 } },
+    { "id": "tower-6", "type": "square", "color": "blue", "attach": { "to": "tower-5", "edge": 2, "fold": -60 } },
+    { "id": "tower-top", "type": "hexagon", "color": "red", "attach": { "to": "tower-1", "edge": 2, "fold": -90 } },
+    { "id": "courtyard", "type": "hexagon", "color": "yellow", "attach": { "to": "tower-4", "edge": 1, "fold": 90 } },
+
+    { "id": "house-front", "type": "square", "color": "orange", "attach": { "to": "path", "edge": 2, "fold": 90 } },
+    { "id": "house-right", "type": "square", "color": "lightblue", "attach": { "to": "house-front", "edge": 1, "fold": -90 } },
+    { "id": "house-back", "type": "square", "color": "yellow", "attach": { "to": "house-right", "edge": 2, "fold": -90 } },
+    { "id": "house-left", "type": "square", "color": "lightblue", "attach": { "to": "house-back", "edge": 2, "fold": -90 } },
+    { "id": "roof-front", "type": "triangle", "color": "lime", "attach": { "to": "house-front", "edge": 2, "fold": -35.26 } },
+    { "id": "roof-right", "type": "triangle", "color": "lightblue", "attach": { "to": "house-right", "edge": 3, "fold": -35.26 } },
+    { "id": "roof-back", "type": "triangle", "color": "green", "attach": { "to": "house-back", "edge": 3, "fold": -35.26 } },
+    { "id": "roof-left", "type": "triangle", "color": "lightblue", "attach": { "to": "house-left", "edge": 3, "fold": -35.26 } },
+    { "id": "pond", "type": "semicircle", "color": "blue", "attach": { "to": "house-back", "edge": 1, "fold": 90 } }
+  ]
+}

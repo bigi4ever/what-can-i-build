@@ -1,0 +1,20 @@
+{
+  "name": "Magnets on the floor (samples/magnets-photo-1.webp)",
+  "system": "magnetic-frames",
+  "source": "Identified by hand from the sample photo; this is what the recognition step should return.",
+  "pieces": [
+    { "type": "square", "color": "yellow", "count": 3 },
+    { "type": "square", "color": "lightblue", "count": 2 },
+    { "type": "square", "color": "blue", "count": 2 },
+    { "type": "square", "color": "red", "count": 1 },
+    { "type": "square", "color": "purple", "count": 1 },
+    { "type": "square", "color": "orange", "count": 1 },
+    { "type": "square", "color": "green", "count": 1 },
+    { "type": "triangle", "color": "lightblue", "count": 2 },
+    { "type": "triangle", "color": "lime", "count": 1 },
+    { "type": "triangle", "color": "green", "count": 1 },
+    { "type": "hexagon", "color": "yellow", "count": 1 },
+    { "type": "hexagon", "color": "red", "count": 1 },
+    { "type": "semicircle", "color": "blue", "count": 1 }
+  ]
+}
