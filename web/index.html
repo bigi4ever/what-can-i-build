@@ -21,11 +21,59 @@
   </header>
 
   <main>
-    <section class="viewer-panel">
+    <aside class="side-panel">
+      <section id="pieces-section">
+        <h2><span class="step-num">1</span> החלקים שלי</h2>
+
+        <div class="photo-box">
+          <img id="photo" alt="התמונה של החלקים" hidden />
+          <p id="photo-empty" class="photo-empty">עוד לא צילמתם. פזרו את החלקים על משטח בצבע אחיד, כך שלא יעלו זה על זה.</p>
+        </div>
+
+        <div class="photo-actions">
+          <label class="button primary">
+            📷 צלמו את החלקים
+            <input id="camera-input" type="file" accept="image/*" capture="environment" hidden />
+          </label>
+          <label class="button">
+            🖼️ בחרו תמונה
+            <input id="gallery-input" type="file" accept="image/*" hidden />
+          </label>
+          <button id="sample-button" type="button" class="link-button">או נסו עם התמונה לדוגמה</button>
+        </div>
+
+        <p id="recognition-note" class="note" hidden>
+          הזיהוי האוטומטי יגיע בקרוב. בינתיים בדקו את הרשימה למטה ותקנו אותה לפי מה שבתמונה.
+        </p>
+
+        <h3>בדקו ותקנו את הרשימה</h3>
+        <div class="quick-add" role="group" aria-label="הוספת חלק">
+          <button type="button" data-add="square">+ ריבוע</button>
+          <button type="button" data-add="triangle">+ משולש</button>
+          <button type="button" data-add="hexagon">+ משושה</button>
+          <button type="button" data-add="semicircle">+ חצי עיגול</button>
+        </div>
+
+        <ul id="inventory-list" class="inventory-list"></ul>
+        <p id="inventory-empty" class="note" hidden>הרשימה ריקה. הוסיפו חלקים בכפתורים למעלה.</p>
+
+        <div class="inventory-footer">
+          <span id="inventory-total"></span>
+          <button id="clear-button" type="button" class="link-button">נקו את הרשימה</button>
+        </div>
+
+        <button id="find-button" type="button" class="button primary big">🔍 מה אפשר לבנות?</button>
+      </section>
+
+      <section id="results-section" hidden>
+        <h2><span class="step-num">2</span> מה אפשר לבנות</h2>
+        <ul id="results" class="results"></ul>
+      </section>
+    </aside>
+
+    <section class="viewer-panel" id="viewer-panel">
       <div class="toolbar">
-        <label>מודל:
-          <select id="model-select"></select>
-        </label>
+        <h2 id="model-title">דוגמה</h2>
         <span id="status-badge" class="badge"></span>
       </div>
       <div id="viewer" aria-label="תצוגת תלת-ממד של המודל"></div>
@@ -37,22 +85,8 @@
       </div>
       <p id="step-text" class="step-text"></p>
       <p class="hint">גוררים כדי לסובב, גלגלת או צביטה כדי להתקרב.</p>
+      <ul id="validation" class="validation"></ul>
     </section>
-
-    <aside class="side-panel">
-      <section>
-        <h2>החלקים שזוהו</h2>
-        <img id="photo" src="../samples/magnets-photo-1.webp" alt="חלקי מגנטים מפוזרים על הרצפה" />
-        <table id="inventory-table">
-          <thead><tr><th>צורה</th><th>צבע</th><th>יש</th><th>בשימוש</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </section>
-      <section>
-        <h2>בדיקת תקינות</h2>
-        <ul id="validation"></ul>
-      </section>
-    </aside>
   </main>
 
   <script type="module" src="app.js"></script>
